@@ -101,22 +101,26 @@
 
   <div class="tab-pane fade" id="shortcuts" role="tabpanel" aria-labelledby="shortcuts-tab">
     <i class="fa-solid fa-caret-right me-2"></i>เช็คคิวรถ
-   <?!= HtmlService.createHtmlOutputFromFile('approver').getContent() ?>
+   <iframe src="https://script.google.com/macros/s/AKfycbxYHoN43YH-zc0yFHvxxcisd4NeZ3gD9CjkRPOP9Q8Rh_tj_h2PKqstBicJ1l9d4t6F/exec"height="700px" width="100%"frameborder="0"scrolling="no" align="center">
+        </iframe>
   </div>
 
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
  <i class="fa-solid fa-caret-right me-2"></i>คิวที่รออนุมัติ
-    <?!= HtmlService.createHtmlOutputFromFile('approve').getContent() ?>
+      <iframe src="https://script.google.com/macros/s/AKfycbyBBBfhvDaOjEKr0rzuqLQBEuoEufzAcK951wsqiCCUSI5XYAz1W5RVQZLuccntX8YbMA/exec"height="700px" width="100%"frameborder="0"scrolling="no" align="center">
+        </iframe>
   </div>
 
   <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
  <i class="fa-solid fa-caret-right me-2"></i>ยกเลิกการจองรถ
-    <?!= HtmlService.createHtmlOutputFromFile('cancel').getContent() ?>
+     <iframe src="https://script.google.com/macros/s/AKfycbxTSKIgKtg8jXHubilILPPqkOZKajxMSwnXAIy65r007vt8qDaR-pqkzBVV2EmhewY-/exec"height="700px" width="100%"frameborder="0"scrolling="no" align="center">
+        </iframe>
   </div>
 
  <div class="tab-pane fade" id="mileout" role="tabpanel" aria-labelledby="profile-tab">
   <i class="fa-solid fa-caret-right me-2"></i>บันทึกเลขไมล์ออก
-    <?!= HtmlService.createHtmlOutputFromFile('mileout').getContent() ?>
+      <iframe src="https://script.google.com/macros/s/AKfycbzW_s0DWhPLwmxB0LMyCGOd7o-At8_8eDZQX7IPrTaGkVpmkAsyr2KfIIjT2OVokjMq/exec"height="700px" width="100%"frameborder="0"scrolling="no" align="center">
+        </iframe>
   </div>
    <div class="tab-pane fade" id="milein" role="tabpanel" aria-labelledby="profile-tab">
   <i class="fa-solid fa-caret-right me-2"></i>บันทึกเลขไมล์เข้า
@@ -124,7 +128,8 @@
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
   <i class="fa-solid fa-caret-right me-2"></i>สรุปการใช้งานรถ
-    <?!= HtmlService.createHtmlOutputFromFile('total').getContent() ?>
+    <iframe src="https://script.google.com/macros/s/AKfycbyJFxvywNGAZJntjbMbcGC2zGaKQb3KzwUqaLWJWnG3g_MyjPq97jQ8f1IUIT9k1iKp8g/exec"height="700px" width="100%"frameborder="0"scrolling="no" align="center">
+        </iframe>
   </div>
 
 </div>
@@ -137,22 +142,26 @@
 
   <script>
 
-    // เริ่มฟังชั่นแดงตัวเลขบนปุ่มเหมือนข้อความเข้า
+ $.LoadingOverlaySetup({
+   //image  : "",
+   background  : "#0d6efd",
+  text        : "ระบบจองรถ",
+  textColor        : "#ffffff",
+  textResizeFactor  : "0.50",
+   size :"20",
+  maxSize :"60",
+  minSize :"20",
+  imageColor : "#ffffff"
+   
+    
+});
+				    
+ $.LoadingOverlay("show");
 
-   document.addEventListener('DOMContentLoaded',function(){
-       setInterval(function(){
-           let app = document.getElementById('app')
-           let app2 = document.getElementById('app2')
-
-   google.script.run.withSuccessHandler(data=>{
-          app.innerHTML = data[0]
-          app2.innerHTML = data[1]
-
-    }).setStatus()
-     },100)
-    })
-
-// จบฟังชั่นแดงตัวเลขบนปุ่มเหมือนข้อความเข้า
+// Hide it after 3 seconds
+setTimeout(function(){
+    $.LoadingOverlay("hide");
+}, 3000);
 
 
 
